@@ -1,0 +1,107 @@
+.App {
+  text-align: center;
+}
+
+.App-logos {
+  height: 60px;
+}
+
+.App-logo {
+  height: 60px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-header p{
+    font-size: small;
+}
+
+.App-intro {
+  font-size: medium;
+}
+
+
+/* Filter bar */
+
+.bar-control{
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+  padding-top: 0px;
+  text-align: left;
+  font-size: large;
+}
+
+.bar-control label,
+.bar-control select,
+.bar-control input{
+  display: block;
+  font-size: large;
+  margin-bottom: 10px;
+}
+.bar-control label{
+  color: #999;
+}
+
+.tour-count{
+  margin-bottom: 10px;
+}
+
+.App-tour-type{
+  font-size:small;
+  padding-left:2em;
+}
+
+.App-tour{
+  display: inline-block;
+  margin: 0.5em;
+  vertical-align: top;
+}
+
+.App-tour-img{
+  width: 200px;
+  height: 200px;
+  vertical-align: bottom;
+}
+
+.App-tour-text{
+  background-color: black;
+  color: white;
+  vertical-align: bottom;
+  padding: 10px;
+  font-weight: 100;
+}
+.App-tour a{
+  text-decoration: none;
+}
+
+.tour-detail-home{
+  display: block;
+  position:absolute;
+  left: 20px;
+  top: 210px;
+
+  font-size: large;
+  text-decoration: none;
+}
+
+.tour-detail{
+  width: 100%;
+  text-align: center;
+}
+.tour-detail-img{
+  width: 100%;
+  height: 50vh;
+}
+
+.tour-detail-body{
+  max-width: 400px;
+  padding: 20px;
+  margin: auto;
+  text-align: left;
+}

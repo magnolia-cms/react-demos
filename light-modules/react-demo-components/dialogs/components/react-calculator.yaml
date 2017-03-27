@@ -1,0 +1,75 @@
+# Automatically generated dialog with few most often used fileds (text, right, link, DAM image, multivalue, link to app, select). Feel free to modify them for your specific component.
+
+form:
+  label: "React Demo: Calculator"
+  tabs:
+    - name: tabMain
+      label: Main
+      fields:
+
+        - name: title
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Title
+          i18n: true
+
+        - name: desc
+          class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+          label: Description
+          rows: 5
+          i18n: true
+
+        - name: label1
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Label 1
+          defaultValue: Gummibears per bag
+          i18n: true
+
+        - name: label2
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Label 2
+          defaultValue: Number of bags
+          i18n: true
+
+        - name: labelResult
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Label Result
+          defaultValue: Total Gummibears
+          i18n: true
+
+        - name: formula
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Formula
+          defaultValue: "([A] * [B])"
+          required: true
+
+    - name: tabMarketing
+      label: Marketing
+      fields:
+
+        - name: marketingPromoLink
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          targetWorkspace: website
+          appName: pages
+          label: Marketing Promo
+          description: Choose a page to link to for the marketing campaign promotion.
+          identifierToPathConverter:
+            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+
+        - name: image
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          targetWorkspace: dam
+          appName: assets
+          label: Marketing Promo Image
+          description: Select an image to be used for the marketing campaign promotion.
+          identifierToPathConverter:
+            class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+          contentPreviewDefinition:
+            contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+
+
+
+actions:
+  commit:
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition
+  cancel:
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition

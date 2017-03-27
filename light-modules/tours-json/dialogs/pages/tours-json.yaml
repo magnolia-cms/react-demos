@@ -1,0 +1,22 @@
+form:
+  label: Page properties
+  tabs:
+    - name: tabMain
+      fields:
+        - name: title
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          i18n: true
+          label: title
+        - name: hideInNav
+          class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition
+          defaultValue: true
+          i18n: false
+          type: Boolean
+          label:  hide In Navigation
+          buttonLabel: hide
+
+actions:
+  commit:
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition
+  cancel:
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition

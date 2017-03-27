@@ -1,0 +1,5 @@
+title: React Page Demo
+templateScript: /react-demo-page/templates/pages/react-demo.ftl
+renderType: freemarker
+dialog: react-demo-page:pages/react-demo
+visible: true

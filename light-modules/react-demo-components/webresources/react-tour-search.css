@@ -1,0 +1,36 @@
+.tour-search{
+  width: 300px;
+  padding:10px;
+  border: solid 1px #999;
+  font-weight: 100;
+}
+
+.tour-search h2{
+  font-size:1.3em;
+  margin: 5px 0;
+  font-weight: 200;
+}
+
+.tour-search__marketing{
+  margin: 10px 0;
+}
+
+.tour-search__marketing__img{
+  width: 100%;
+  height: 80px;
+}
+
+.tour-search__count{
+  margin: 10px 0;
+}
+
+.tour-search__list{
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+.tour-search__list__featured{
+  font-size: x-small;
+  text-transform: uppercase;
+  padding-left: 6px;
+}

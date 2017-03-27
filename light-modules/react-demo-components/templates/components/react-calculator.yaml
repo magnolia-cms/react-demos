@@ -1,0 +1,4 @@
+title: "React Demo: Calculator"
+renderType: freemarker
+templateScript: /react-demo-components/templates/components/react-calculator.ftl
+dialog: react-demo-components:components/react-calculator

@@ -1,0 +1,4 @@
+title: tours-json
+templateScript: /tours-json/templates/pages/tours-json.ftl
+renderType: freemarker
+dialog: tours-json:pages/tours-json

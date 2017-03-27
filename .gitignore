@@ -1,0 +1,24 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/react-tours-headless/build
+
+# magnolia
+/apache-tomcat
+/magnolia.zip
+
+# misc
+.DS_Store
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+/light-modules/react-component
+/light-modules/angular-travel-demo

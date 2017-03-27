@@ -1,0 +1,4 @@
+title: "React Demo: Tour Search"
+renderType: freemarker
+templateScript: /react-demo-components/templates/components/react-tour-search.ftl
+dialog: react-demo-components:components/react-tour-search
