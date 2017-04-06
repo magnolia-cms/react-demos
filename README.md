@@ -36,9 +36,13 @@ A widget which lists content from a REST source and allows filtering via a `sear
 
 # Features - 2. Magnolia Page
 
+A Magnolia page template that delivers a single page app. The tours content is rendered directly in the page via template script so no REST call is required.
+
 ![](_dev/README-react-page.jpg)
 
-# Features - 3. Decoupled
+# Features - 3. Decoupled / Headless
+
+A React app running on another server gets content from Magnolia content apps via REST calls.
 
 ![](_dev/README-react-decoupled.jpg)
 
@@ -48,13 +52,14 @@ Install the Magnolia CLI globally with `npm install @magnolia/cli -g`. This inst
 
 Get a Magnolia server by running `mgnl jumpstart` in this directory. Or point your existing Magnolia instance to the provided `light-modules` directory.
 
-Install the jsonfn jar included in `_dev/jars/magnolia-jsonfn-1.0.7.jar` in your webapp. (Copy it to `react-demos/apache-tomcat/webapps/magnoliaAuthor/WEB-INF/lib`)
+Install the jsonfn jar included in `_dev/jars/magnolia-jsonfn-1.0.7.jar` in your webapp.
+(Copy it to `react-demos/apache-tomcat/webapps/magnoliaAuthor/WEB-INF/lib`)
 
 Start the Magnolia server with `mgnl start`.
 
-In the Assets app, use the `Import` action to import the `dam.react-demo-components.xml` file from `_dev/demos`.
+In the Assets app, use the `Import` action to import the `_dev/demos/` `dam.react-demo-components.xml` file.
 
-In the 'Admin central' Pages app, use the `Import` action to import all the `website...` files from `_dev/demos`.
+In the 'Admin central' Pages app, use the `Import` action to import `_dev/demos/` `website.demo-react.xml` file.
 
 In the `Pages` app, open the various pages under `demo-react` that have been imported.
 
