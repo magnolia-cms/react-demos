@@ -15,9 +15,15 @@
     -->
     <title>React and Magnolia</title>
     <script>
-      window.MAGNOLIA_BASE_URL = "http://localhost:8080/magnoliaAuthor"
-      //window.MAGNOLIA_BASE_URL = "http://localhost:8080"
-      window.MAGNOLIA_TOURS_URL = window.MAGNOLIA_BASE_URL + "/tours-endpoint.js"
+    //window.MAGNOLIA_BASE_URL = "http://localhost:8080/magnoliaAuthor"
+    /* Because we set the create-react-app 'proxy' in the package.json
+    The system will automatically proxy any requests to magnoila that it does not knoow
+    what to do with. This also solves the CORS problem. But this only works in
+    create-react-apps dev server mode. */
+    window.MAGNOLIA_BASE_URL = "magnoliaAuthor"
+    window.MAGNOLIA_BASE_URL_IMAGE = ""
+    //window.MAGNOLIA_BASE_URL = "http://localhost:8080"
+      window.MAGNOLIA_TOURS_URL = window.MAGNOLIA_BASE_URL + "/demo-react/tours-endpoint.js"
       window.PUBLIC_URL = "%PUBLIC_URL%"
 
       window.MAGNOLIA_HEADER = "Decoupled React App & Magnolia"

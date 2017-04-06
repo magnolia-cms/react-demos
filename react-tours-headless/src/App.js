@@ -59,11 +59,20 @@ class App extends Component {
       // Headless - retrieve data via REST.
       console.log("Must retrieve data.")
 
+      // Sending superuser for demo purposes
+      // For actual project you would probably simply ensure the anonymous user in Magnolia has proper rights.
+      const requestConfig = {
+        auth: {
+          username: 'superuser',
+          password: 'superuser'
+        }
+      }
+
       this.serverRequest =
         axios.all([
-          axios.get(URL),
-          axios.get(URL + '?destinations=true'),
-          axios.get(URL + '?tour-types=true')
+          axios.get(URL, requestConfig),
+          axios.get(URL + '?destinations=true', requestConfig),
+          axios.get(URL + '?tour-types=true', requestConfig)
         ])
         .then(axios.spread(function (tours, destinations, tourTypes) {
           _this.setState({
@@ -234,7 +243,7 @@ class Tour extends React.Component {
   render() {
 
     const imgStyle = {
-      backgroundImage: 'url(' + window.MAGNOLIA_BASE_URL + this.props.tour.image['@rendition_480'] + ')',
+      backgroundImage: 'url(' + window.MAGNOLIA_BASE_URL_IMAGE + this.props.tour.image['@rendition_480'] + ')',
       backgroundSize: 'cover',
       backgroundPosition: 'center'
     }

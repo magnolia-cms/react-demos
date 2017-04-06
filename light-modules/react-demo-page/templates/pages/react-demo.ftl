@@ -19,6 +19,7 @@
     <script>
     //window.MAGNOLIA_BASE_URL = "http://localhost:8080/magnoliaAuthor"
     window.MAGNOLIA_BASE_URL = "http://localhost:8080${ctx.contextPath}"
+    window.MAGNOLIA_BASE_URL_IMAGE = "http://localhost:8080"
     window.PUBLIC_URL = "${ctx.contextPath}/.resources/react-demo-page/webresources/build"
 
         window.MAGNOLIA_HEADER = "Magnolia Page delivers React App"

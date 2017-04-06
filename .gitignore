@@ -13,6 +13,9 @@
 /apache-tomcat
 /magnolia.zip
 
+# work
+/_work
+
 # misc
 .DS_Store
 .env

@@ -11,7 +11,7 @@ class TourDetail extends Component {
     const tour = find(this.props.tourName)
 
     const imgStyle = {
-      backgroundImage: 'url(' + window.MAGNOLIA_BASE_URL + tour.image['@link'] + ')',
+      backgroundImage: 'url(' + window.MAGNOLIA_BASE_URL_IMAGE + tour.image['@link'] + ')',
       backgroundSize: 'cover',
       backgroundPosition: 'center'
     }

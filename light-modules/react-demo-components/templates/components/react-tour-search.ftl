@@ -10,12 +10,13 @@ ${resfn.js(["/react-demo-components/webresources/libs/axios.min.js"])!}
 
 <script type="text/babel">
 
-  var dataUrl = "http://localhost:8080" + "/tours-endpoint.js"
+  var dataUrl =  "${ctx.contextPath}/demo-react/tours-endpoint.js"
 
+  //linkContext is added to the front of the link - for example in some cases you might want linkContext='/travel'
   ReactDOM.render(
     <TourSearch
                   dataUrl={dataUrl}
-                  linkContext='/travel'
+                  linkContext=''
                   labelSearch='${i18n["react-tour-search.search"]}'
                   labelTours='${content.labelTours}'
                   labelFeatured='${content.labelFeatured}'
