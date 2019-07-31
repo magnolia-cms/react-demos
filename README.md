@@ -53,17 +53,19 @@ Here's a guide for that: https://documentation.magnolia-cms.com/display/DOCS61/I
 
 Should work on Magnolia 5.6.5 and above. Tested most recently on Magnolia 6.1.
 
-Install the Magnolia CLI globally with `npm install @magnolia/cli -g`. This installs the (handy-dandy) `mgnl` command.
+* Install the Magnolia CLI globally with `npm install @magnolia/cli -g`. This installs the (handy-dandy) `mgnl` command.
 
-Get a Magnolia server by running `mgnl jumpstart` in the root of this repository.
+* Get a Magnolia server by running `mgnl jumpstart` in the root of this repository.
 Choose option 3, `magnolia-community-demo-webapp`, or another option which includes the `demo` content.
 (It gives you some demo content, 'tours', a `site` and `theme` configuration for resizing images, and a good CORS configuration.)
 
-Start the Magnolia server with `mgnl start`.
+* Start the Magnolia server with `mgnl start`.
 
-In the Assets app, use the `Import` action to import the `_dev/demos/` `dam.react-demo-components.xml` file. (You can import it into existing folders, or add a folder.)
+* Log into Magnolia - http://http://localhost:8080 (Author instance)
 
-In the 'Admin central' Pages app, use the `Import` action to import `_dev/demos/` `website.demo-react.xml` file.
+* In the Assets app, use the `Import` action to import the `_dev/demos/` `dam.react-demo-components.xml` file. (You can import it into existing folders, or add a folder.)
+
+* In the 'AdminCentral' Pages app, use the `Import` action to import `_dev/demos/` `website.demo-react.xml` file.
 
 
 # Demo - Magnolia Components and Page
@@ -77,13 +79,13 @@ Follow the above steps first.
 
 Ensure Magnolia is running.
 
-Open a terminal in `/react-tours-headless` directory.
+* Open a terminal in `/react-tours-headless` directory.
 
-Type `npm install`
+* Type `npm install`
 
-Type `npm run`
+* Type `npm run`
 
-A browser will open a node-based dev server running an independent React App. It get content from the Magnolia Server content apps: Tours and Tour Categories.
+* A browser will open a node-based dev server running an independent React App. It get content from the Magnolia Server content apps: Tours and Tour Categories.
 
 ### Headless Demo Debugging
 Does the page display "NOT LOADED"? Then check the browser console for errors, and review the following notes:
