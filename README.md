@@ -109,6 +109,8 @@ I like developing directly against the Magnolia 'author' instance.
 App.js passes auth headers for the default superuser account to make this work.
 For actual project you would typically hit the 'public instance and  simply ensure the `anonymous` user in Magnolia has proper access rights to the REST endpoints.
 
+Project has been updated to newer React and CRA versions, but should be compatible with React 15 too.
+
 
 # Future Improvements
 
