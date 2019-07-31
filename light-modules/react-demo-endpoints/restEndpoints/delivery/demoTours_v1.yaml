@@ -1,0 +1,29 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+nodeTypes:
+  - mgnl:content
+includeSystemProperties: false
+bypassWorkspaceAcls: true
+limit: 50
+workspace: tours
+
+references:
+
+  - name: tourTypes
+    propertyName: tourTypes
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: category
+
+  - name: destinations
+    propertyName: destination
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: category
+
+  - name: tourImageReference
+    propertyName: image
+    referenceResolver:
+      class: info.magnolia.rest.reference.dam.AssetReferenceResolverDefinition
+      assetRenditions:
+        - 320x240
+        - 960x720

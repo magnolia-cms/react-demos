@@ -11,9 +11,11 @@ import './App.css';
 import TourDetail from './TourDetail.js';
 import FilterBar from './FilterBar.js';
 
-//const URL = "http://localhost:8080/tours-endpoint.js"
-//const URL = "/tours-for-testing.json"
-const URL = window.MAGNOLIA_TOURS_URL;
+const URL_BASE = window.MAGNOLIA_BASE_URL;
+//const URL_BASE = "http://localhost:8080/magnoliaAuthor/.rest";
+const URL_TOURS = '/.rest/delivery/demoTours/v1/';
+const URL_TOURTYPES = '/.rest/delivery/demoTourTypes/v1/';
+const URL_DESTINATIONS = '/.rest/delivery/demoDestinations/v1/';
 
 const About = () => (
   <div>
@@ -49,13 +51,14 @@ class App extends Component {
       console.log("Has inline data.")
 
       _this.setState({
-        tours: window.MAGNOLIA_TOURS,
-        destinations: window.MAGNOLIA_DESTINATIONS,
-        tourTypes: window.MAGNOLIA_TOURTYPES,
+        tours: window.MAGNOLIA_TOURS.results,
+        destinations: window.MAGNOLIA_DESTINATIONS.results,
+        tourTypes: window.MAGNOLIA_TOURTYPES.results,
         loaded: true
       });
 
     }else{
+
       // Headless - retrieve data via REST.
       console.log("Must retrieve data.")
 
@@ -70,15 +73,15 @@ class App extends Component {
 
       this.serverRequest =
         axios.all([
-          axios.get(URL, requestConfig),
-          axios.get(URL + '?destinations=true', requestConfig),
-          axios.get(URL + '?tour-types=true', requestConfig)
+          axios.get(URL_BASE + URL_TOURS, requestConfig),
+          axios.get(URL_BASE + URL_TOURTYPES, requestConfig),
+          axios.get(URL_BASE + URL_DESTINATIONS, requestConfig)
         ])
-        .then(axios.spread(function (tours, destinations, tourTypes) {
+        .then(axios.spread(function (tours, tourTypes, destinations) {
           _this.setState({
-            tours: tours.data,
-            destinations: destinations.data,
-            tourTypes: tourTypes.data,
+            tours: tours.data.results,
+            tourTypes: tourTypes.data.results,
+            destinations: destinations.data.results,
             loaded: true
           });
           console.log("App:serverRequest: Got all files.")
@@ -217,8 +220,9 @@ class TourList extends Component {
 
   isFilterMatch(tour) {
     const isSearchMatch = (tour.name.toLowerCase().indexOf(this.props.filterText.toLowerCase()) !== -1)
-    const isDestinationMatch = tour.destination.includes(this.props.destination) || this.props.destination===''
-    const isTourTypeMatch = tour.tourTypes.includes(this.props.tourType) || this.props.tourType===''
+
+    const isDestinationMatch = tour.destination.some(item => item['@id'] === this.props.destination) || this.props.destination===''
+    const isTourTypeMatch = tour.tourTypes.some(item => item['@id'] === this.props.tourType) || this.props.tourType===''
     return (isSearchMatch && isDestinationMatch && isTourTypeMatch)
   }
 
@@ -243,7 +247,7 @@ class Tour extends React.Component {
   render() {
 
     const imgStyle = {
-      backgroundImage: 'url(' + window.MAGNOLIA_BASE_URL_IMAGE + this.props.tour.image['@rendition_480'] + ')',
+      backgroundImage: 'url(' + window.MAGNOLIA_BASE_URL_IMAGE + this.props.tour.image.renditions['320x240'].link + ')',
       backgroundSize: 'cover',
       backgroundPosition: 'center'
     }

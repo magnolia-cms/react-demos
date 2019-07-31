@@ -15,7 +15,7 @@
 
     <div id="root"></div>
 
-    [#include "/tours-json/templates/macros/tours.ftl"]
+    [#--include "/tours-json/templates/macros/tours.ftl"--]
     <script>
     //window.MAGNOLIA_BASE_URL = "http://localhost:8080/magnoliaAuthor"
     window.MAGNOLIA_BASE_URL = "http://localhost:8080${ctx.contextPath}"
@@ -27,9 +27,9 @@
 
         // Provide tour data directly in the page.
 
-        window.MAGNOLIA_DESTINATIONS = [@destinationsJson /]
-        window.MAGNOLIA_TOURTYPES = [@tourTypesJson /]
-        window.MAGNOLIA_TOURS = [@toursJson /]
+        window.MAGNOLIA_DESTINATIONS = ${model.getFromMagEndpoint('/delivery/demoDestinations/v1/')!}
+        window.MAGNOLIA_TOURTYPES = ${model.getFromMagEndpoint('/delivery/demoTourTypes/v1/')!}
+        window.MAGNOLIA_TOURS = ${model.getFromMagEndpoint('/delivery/demoTours/v1/')!}
     </script>
 
     ${resfn.js(["/react-demo-page/webresources.*js"])!}

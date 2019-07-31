@@ -3,3 +3,6 @@ templateScript: /react-demo-page/templates/pages/react-demo.ftl
 renderType: freemarker
 dialog: react-demo-page:pages/react-demo
 visible: true
+
+class: info.magnolia.module.jsmodels.rendering.JavascriptTemplateDefinition
+modelPath: /react-demo-page/templates/js/backend-rest-model.js

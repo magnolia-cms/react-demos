@@ -1,0 +1,8 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+workspace: category
+rootPath: /tour-types
+nodeTypes:
+  - mgnl:category
+includeSystemProperties: false
+bypassWorkspaceAcls: true
+limit: 20

@@ -30,8 +30,9 @@ class TourSearch extends React.Component {
         axios.get(this.props.dataUrl)
       ])
       .then(axios.spread(function (tours) {
+        let results = tours.data.results;
         _this.setState({
-          tours: tours.data,
+          tours: results,
           loaded: true
         });
         console.log("App:serverRequest: Got all files.")
@@ -133,7 +134,7 @@ class Tour extends React.Component {
   render() {
     return (
       <div className="tour-search__list__tour">
-        <a href={this.props.linkContext + this.props.tour["@link"]}>
+        <a href={this.props.linkContext + '/tours' + this.props.tour["@path"] + '.html'}>
           {this.props.tour.name}
         </a>
         <span className="tour-search__list__featured">{(this.props.tour.isFeatured)?this.props.labelFeatured:''}</span>
