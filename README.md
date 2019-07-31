@@ -72,7 +72,7 @@ In the `Pages` app, open the various pages under `demo-react` that have been imp
 
 (Note that 'decorations' are provided so that the two components are available in the MTK basic page, and the Travel demo pages.)
 
-# Demo - Decoupled / Headless scenario.
+# Demo - Headless scenario.
 Follow the above steps first.
 
 Ensure Magnolia is running.
@@ -85,7 +85,7 @@ Type `npm run`
 
 A browser will open a node-based dev server running an independent React App. It get content from the Magnolia Server content apps: Tours and Tour Categories.
 
-### Decoupled Demo Debugging
+### Headless Demo Debugging
 Does the page display "NOT LOADED"? Then check the browser console for errors, and review the following notes:
 
 Note: To avoid CORS errors (like 'Cross-Origin Request Blocked'), and allow the React app which is running on a node dev server to access the independent Magnolia server, the 'proxy' feature of 'create-react-app' (or webpack?) is used. (All requests for unknown files are proxied to the specified address. The proxy is set in `react-tours-headless/package.json`). An alternative is to use Magnolia CORS filter module. For More information on the filter see: https://wiki.magnolia-cms.com/display/WIKI/CORS+filter+documentation
